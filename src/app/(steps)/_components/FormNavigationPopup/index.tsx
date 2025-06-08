@@ -44,7 +44,7 @@ export default function FormNavigationPopup({
             {/* price */}
             <div className="text-end">
               <h3 className="text-2xl font-bold ">
-                {props?.price_before_vat}{" "}
+                £{props?.price_before_vat}
               </h3>
               <small className="text-sm text-gray-500">
                 ({props?.vat}% VAT)
@@ -53,7 +53,12 @@ export default function FormNavigationPopup({
           </div>
           {/* action buttons  */}
           <div className="flex justify-between items-center gap-4 w-full md:justify-end mt-4">
-            <Button variant={"outline"} className="flex-1 md:flex-initial md:w-26">Back</Button>
+            <Button
+              variant={"outline"}
+              className="flex-1 md:flex-initial md:w-26"
+            >
+              Back
+            </Button>
             <Button className="flex-1 md:flex-initial md:w-26">Next</Button>
           </div>
         </div>

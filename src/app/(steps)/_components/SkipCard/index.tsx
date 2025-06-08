@@ -16,7 +16,7 @@ export default function SkipCard({
 }: skipCardProps) {
   const imageUrl = `${process.env.NEXT_PUBLIC_IMAGE_URL}/${props?.size}-yarder-skip.jpg`;
 
-  const handleSkipSelect = () => onSelect({...props});
+  const handleSkipSelect = () => onSelect({ ...props });
   return (
     <div className="space-y-3" onClick={handleSkipSelect}>
       {/* Image section  */}
@@ -63,7 +63,7 @@ export default function SkipCard({
 
         {/* price */}
         <div className="text-end">
-          <h3 className="text-2xl font-bold ">{props?.price_before_vat} </h3>
+          <h3 className="text-2xl font-bold ">£{props?.price_before_vat} </h3>
           <small className="text-sm text-gray-500">({props?.vat}% VAT)</small>
         </div>
       </div>
