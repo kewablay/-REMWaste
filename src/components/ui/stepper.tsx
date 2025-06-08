@@ -54,7 +54,7 @@ export default function Stepper({ currentStep }: StepperProps) {
   ];
 
   return (
-    <div className="w-full bg-slate-900 px-6 py-4 overflow-x-auto">
+    <div className="w-full sticky top-0 z-50 bg-slate-900 px-6 py-5 overflow-x-auto">
       <div className="flex items-center justify-between max-w-6xl mx-auto">
         {steps.map((step, index) => {
           const isActive = step.id === currentStep;
