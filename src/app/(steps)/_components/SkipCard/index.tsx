@@ -20,14 +20,15 @@ export default function SkipCard({
   return (
     <div className="space-y-3" onClick={handleSkipSelect}>
       {/* Image section  */}
-
       <div className="rounded-lg bg-gray-200 h-[15rem] w-full relative overflow-hidden group ">
+        {/* selected check  */}
         {isSelected && (
-          <div className="absolute left-3 top-3 z-10 size-8 flex items-center justify-center rounded-full bg-orange-400">
-            <Check className="text-black" />
+          <div className="absolute left-3 top-3 z-10 size-8 flex items-center justify-center rounded-full bg-blue-600">
+            <Check className="text-white" size={16} />
           </div>
         )}
 
+        {/* skip image  */}
         <Image
           src={imageUrl}
           alt={`${props?.size} yarder skip`}
@@ -37,12 +38,12 @@ export default function SkipCard({
         />
 
         {!props?.allowed_on_road && (
-          <Badge className="absolute bottom-3 right-3 text-orange-400">
+          <Badge className="absolute bottom-3 right-3 ">
             <TriangleAlert className="text-inherit" /> Not Allowed On Road
           </Badge>
         )}
         {!props?.allows_heavy_waste && (
-          <Badge className="absolute bg-blue-500 bottom-3 left-3">
+          <Badge className="absolute bg-blue-500 text-white bottom-3 left-3">
             <Biohazard className="text-inherit" /> Heavy Waste
           </Badge>
         )}

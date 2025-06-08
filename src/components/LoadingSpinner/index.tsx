@@ -29,7 +29,7 @@ function LoadingSpinner({
     >
       <Loader2
         size={iconSize}
-        className="animate-spin  mx-auto text-orange-500"
+        className="animate-spin  mx-auto text-primary"
       />
     </div>
   );

@@ -26,7 +26,6 @@ const apiClient = axios.create({
 
 // Type-safe API request function to be used in services
 export async function apiRequest<T>(config: ApiRequestConfig): Promise<T> {
-  const defaultBaseUrl = process.env.NEXT_PUBLIC_API_URL;
 
   // Set default showToast value to true
   const defaultConfig: ApiRequestConfig = {

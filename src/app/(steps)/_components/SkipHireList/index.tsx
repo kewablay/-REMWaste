@@ -6,6 +6,7 @@ import { SkipType } from "@/types/skip.types";
 import { useGetSkipsQuery } from "../../_hooks/useGetSkipsQuery";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import { useForm } from "react-hook-form";
+import FormNavigationPopup from "../FormNavigationPopup";
 
 export default function SkipHireList() {
   const {
@@ -19,14 +20,15 @@ export default function SkipHireList() {
   const [skip, setSkip] = useState<SkipType | null>(null);
 
   const handleSkipSelect = (skip: SkipType) => {
-    if(skip?.id === selectedSkip) {
-      setValue("selectedSkip", null); // set the value of the form
-      setSkip(null); // update skip state  skip
+    // check if the skip is already selected
+    if (skip?.id === selectedSkip) {
+      setValue("selectedSkip", null);  // deselect skip
+      setSkip(null); // update skip state
       return;
     }
-    
+
     setValue("selectedSkip", skip?.id); // set the value of the form
-    setSkip(skip); // update skip state  skip
+    setSkip(skip); // update skip state
   };
 
   return (
@@ -53,6 +55,9 @@ export default function SkipHireList() {
 
       {/* skips loading error */}
       {skipsError && <p>Error loading skips</p>}
+
+      {/* bottom popup with selected skip and action buttons */}
+      {skip && <FormNavigationPopup isOpen={!!skip} {...skip} />}
     </>
   );
 }

@@ -1,4 +1,4 @@
-import Stepper from "@/components/Stepper";
+import Stepper from "@/components/ui/stepper";
 
 export default function StepsLayout({
   children,
@@ -7,7 +7,7 @@ export default function StepsLayout({
 }>) {
   return (
     <>
-      <Stepper />
+      <Stepper currentStep="selectskip" />
       {children}
     </>
   );
